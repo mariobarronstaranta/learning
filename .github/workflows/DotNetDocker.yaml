@@ -27,6 +27,7 @@ jobs:
   docker:
     name: Dockerizacion delproyecto
     runs-on: ubuntu-lastest
+    needs: [build]
     steps:
     - uses: actions/checkout@v4
     - name: dockerbuild
