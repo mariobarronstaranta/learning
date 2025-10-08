@@ -28,5 +28,6 @@ jobs:
     name: Dockerizacion delproyecto
     runs-on: ubuntu-lastest
     steps:
+    - uses: actions/checkout@v4
     - name: dockerbuild
       run: docker build src/wpm-api --file src/wpm-api/Dockerfile --tag github-action-escencial
