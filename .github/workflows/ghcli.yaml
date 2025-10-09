@@ -2,6 +2,11 @@ name: ghcli
 
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: Etiqueta de imagen para la dockerizacion
+        required: true
+        default: latest
 
 jobs:
   build:
@@ -28,4 +33,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: dockerbuild
-      run: docker build src/wpm-api --file src/wpm-api/Dockerfile --tag github-action-escencial
+      run: docker build src/wpm-api --file src/wpm-api/Dockerfile --tag github-action-esencial: ${{github.event.inputs.tag}}
